@@ -1,6 +1,8 @@
 <?php
 
+require 'vendor/autoload.php';
 
+use Twilio\Rest\Client;
 
 
 $courseCode = isset($_GET['course']) ? $_GET['course'] : '';
@@ -142,9 +144,32 @@ if (!empty($unitCode)) {
                                     ]);
                                     $attendanceResult = $stmtAttendance->fetch(PDO::FETCH_ASSOC);
 
+                                    // Your Twilio credentials
+                                    $sid = 'AC6ad6b8b99e2bad5590aed0ebffbbb4ee'; // Replace with your actual Twilio SID
+                                    $token = 'ebc1d8dd45f7e21b36d438b9364b3792'; // Replace with your actual Twilio Auth Token
+                                    $twilio = new Client($sid, $token);
+
+                                    // Example function to send a WhatsApp message          
+                                    function sendWhatsAppMessage($to, $message) {
+                                    global $twilio;
+                                    $from = 'whatsapp:+14155238886'; // Replace with your Twilio WhatsApp number
+
+                                    $twilio->messages->create($to, [
+                                        'from' => $from,
+                                        'body' => $message
+                                    ]);
+                                    }           
+
+                                    $user = [
+                                        'phoneNumber' => '+62895384338340', // Replace with the student's phone number
+                                        'firstName' => 'John'
+                                    ];
                                     // Display attendance status or default to "Absent"
                                     if ($attendanceResult) {
                                         echo "<td>" . $attendanceResult['attendanceStatus'] . "</td>";
+                                        $to = 'whatsapp:' . $user['phoneNumber'];
+                                        $message = 'Hello ' . $user['firstName'] . ', you have successfully marked your attendance.';
+                                        sendWhatsAppMessage($to, $message);
                                     } else {
                                         echo "<td>Absent</td>";
                                     }

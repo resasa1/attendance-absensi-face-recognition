@@ -19,12 +19,12 @@
                 <span class="sidebar--item">Students</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="download-record">
                 <span class="icon icon-1"><i class="ri-user-line"></i></span>
                 <span class="sidebar--item">Download Attendance</span>
             </a>
-        </li>
+        </li> -->
 
     </ul>
     <ul class="sidebar--bottom-items">

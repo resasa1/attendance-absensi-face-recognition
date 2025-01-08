@@ -5,6 +5,7 @@ if (isset($_POST['addStudent'])) {
     $firstName = $_POST['firstName'];
     $lastName = $_POST['lastName'];
     $email = $_POST['email'];
+    $number = $_POST['number'];
     $registrationNumber = $_POST['registrationNumber'];
     $courseCode = $_POST['course'];
     $faculty = $_POST['faculty'];
@@ -43,9 +44,9 @@ if (isset($_POST['addStudent'])) {
         // Insert new student with images stored as JSON
         $insertQuery = $pdo->prepare("
         INSERT INTO tblstudents 
-        (firstName, lastName, email, registrationNumber, faculty, courseCode, studentImage, dateRegistered) 
+        (firstName, lastName, email, registrationNumber, faculty, courseCode, studentImage, dateRegistered, number) 
         VALUES 
-        (:firstName, :lastName, :email, :registrationNumber, :faculty, :courseCode, :studentImage, :dateRegistered)
+        (:firstName, :lastName, :email, :registrationNumber, :faculty, :courseCode, :studentImage, :dateRegistered, :number)
     ");
 
         $insertQuery->execute([
@@ -56,7 +57,8 @@ if (isset($_POST['addStudent'])) {
             ':faculty' => $faculty,
             ':courseCode' => $courseCode,
             ':studentImage' => $imagesJson, // Store JSON array of image file names
-            ':dateRegistered' => $dateRegistered
+            ':dateRegistered' => $dateRegistered,
+            ':number' => $number
         ]);
 
         $_SESSION['message'] = "Student: $registrationNumber added successfully!";
@@ -149,6 +151,7 @@ if (isset($_POST['addStudent'])) {
                             <input type="text" name="firstName" placeholder="First Name">
                             <input type="text" name="lastName" " placeholder=" Last Name">
                             <input type="email" name="email" placeholder="Email Address">
+                            <input type="text" name="number" placeholder="Nomer hape">
                             <input type="text" required id="registrationNumber" name="registrationNumber" placeholder="Registration Number"> <br>
                             <p id="error" style="color: red; display: none;">Invalid characters in registration number.</p> 
                             <select required name="faculty">

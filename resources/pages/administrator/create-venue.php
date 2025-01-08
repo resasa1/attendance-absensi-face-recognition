@@ -200,7 +200,7 @@ if (isset($_POST["addVenue"])) {
                         <option value="office">Office</option>
                     </select>
                     <select required name="faculty">
-                        <option value="" selected>Select Faculty</option>
+                        <option value="" selected>Pilih Fakultas</option>
                         <?php
                         $facultyNames = getFacultyNames();
                         foreach ($facultyNames as $faculty) {

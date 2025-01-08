@@ -187,7 +187,7 @@ function sendAttendanceDataToServer() {
 
           if (response.status === "success") {
             showMessage(
-              response.message || "Attendance recorded successfully."
+              response.message || "Berhasil merekam absensi kehadiran."
             );
           } else {
             showMessage(

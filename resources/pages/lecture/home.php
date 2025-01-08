@@ -1,5 +1,7 @@
 <?php
+require 'vendor/autoload.php';
 
+use Twilio\Rest\Client;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $attendanceData = json_decode(file_get_contents("php://input"), true);
@@ -25,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':attendanceStatus' => $attendanceStatus,
                     ':date' => $date
                 ]);
+                sendWhatsAppMessage($studentID, $attendanceStatus);
             }
 
             $_SESSION['message'] = "Attendance recorded successfully for all entries.";
@@ -34,6 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $_SESSION['message'] = "No attendance data received.";
     }
+}
+function sendWhatsAppMessage($studentID, $attendanceStatus) {
+    $sid = 'AC6ad6b8b99e2bad5590aed0ebffbbb4ee';
+    $token = 'ebc1d8dd45f7e21b36d438b9364b3792';
+    $twilio = new Client($sid, $token);
+
+    $message = "Attendance status for student ID $studentID has changed to $attendanceStatus.";
+
+    $twilio->messages->create(
+        'whatsapp:+14155238886', // Replace with the recipient's WhatsApp number
+        [
+            'from' => 'whatsapp:+62895384338340', // Replace with your Twilio WhatsApp number
+            'body' => $message
+        ]
+    );
 }
 
 ?>
@@ -97,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="attendance-button">
                 <button id="startButton" class="add">Absen Kehadiran</button>
                 <button id="endButton" class="add" style="display:none">Hentikan proses absensi</button>
-                <button id="endAttendance" class="add">Matikan kamera absensi</button>
+                <button id="endAttendance" class="add">Ambil Foto Kehadiran</button>
             </div>
 
             <div class="video-container" style="display:none;">
@@ -116,7 +134,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </section>
     <script>
+    //     document.getElementById('startButton').addEventListener('click', function() {
+    //     document.getElementById('endAttendance').style.display = 'block';
+    //     document.getElementById('startButton').style.display = 'none';
+    //     document.getElementById('endButton').style.display = 'block';
+    // });
 
+    // document.getElementById('endButton').addEventListener('click', function() {
+    //     document.getElementById('endAttendance').style.display = 'none';
+    //     document.getElementById('startButton').style.display = 'block';
+    //     document.getElementById('endButton').style.display = 'none';
+    // });
+
+    // document.getElementById('endAttendance').addEventListener('click', function() {
+    //     document.getElementById('endAttendance').style.display = 'none';
+    //     document.getElementById('startButton').style.display = 'block';
+    //     document.getElementById('endButton').style.display = 'none';
+    // });
     </script>
 
     <?php js_asset(["active_link", 'face_logics/script']) ?>
