@@ -99,12 +99,12 @@ if (isset($_POST['addStudent'])) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Course</th>
+                                <th>Nomor Registrasi</th>
+                                <th>Nama</th>
+                                <th>Fakultas</th>
+                                <th>Kelas</th>
                                 <th>Email</th>
-                                <th>Settings</th>
+                                <th>Pengaturan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -133,10 +133,10 @@ if (isset($_POST['addStudent'])) {
                 </div>
 
             </div>
-            <div class="formDiv--" id="form" style="display:none;">
+            <div class="formDiv--" id="form" style="display:none; overflow-y: hidden">
 
                 <form method="post">
-                    <div style="display:flex; justify-content:space-around;">
+                    <div style="display:flex; justify-content:center;">
                         <div class="form-title">
                             <p>Add Student</p>
                         </div>
@@ -173,7 +173,7 @@ if (isset($_POST['addStudent'])) {
                         </div>
                         <div>
                             <div class="form-title-image">
-                                <p>Take Student Pictures
+                                <p>Ambil Gambar Siswa
                                 <p>
                             </div>
                             <div id="open_camera" class="image-box" onclick="takeMultipleImages()">
@@ -202,6 +202,7 @@ if (isset($_POST['addStudent'])) {
     <?php js_asset(["admin_functions", "delete_request", "script", "active_link"]) ?>
 
     <script>
+        
         const registrationNumberInput = document.getElementById('registrationNumber');
         const errorMessage = document.getElementById('error');
 

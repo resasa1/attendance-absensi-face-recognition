@@ -87,7 +87,7 @@ if (!empty($unitCode)) {
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
+                                <th>Nomor registrasi</th>
                                 <?php
                                 // Fetch distinct dates for the selected course and unit
                                 $distinctDatesQuery = "SELECT DISTINCT dateMarked FROM tblattendance WHERE course = :courseCode AND unit = :unitCode";

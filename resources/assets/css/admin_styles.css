@@ -257,6 +257,14 @@ thead{
     padding:1rem;
   }
  
+
+  .theform {
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+
   .close{
     
     font-size: 3.5rem;
@@ -373,9 +381,9 @@ thead{
     display:flex; align-items:center; padding-top:10px; 
 }
 .formDiv--{
-position:absolute;
-   top: 20%;
-   left: 10%;
+    position:absolute;
+    top: 20%;
+    left: 10%;
     height: 400px;
     margin-left:15%;
     transform: translate(-10%, -10%);
@@ -383,6 +391,7 @@ position:absolute;
     background-color:#f1f1f1;
     border-radius:15px;
     padding:3rem;
+    overflow-y: hidden;
 }
 
 .add-new-form{

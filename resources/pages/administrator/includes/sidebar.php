@@ -9,7 +9,7 @@
                 <li>
                     <a href="manage-course">
                         <span class="icon icon-1"><i class="ri-file-text-line"></i></span>
-                        <span class="sidebar--item">Manage Courses</span>
+                        <span class="sidebar--item">Manage Kelas</span>
                     </a>
                 </li>
                 <li>
@@ -21,13 +21,13 @@
                 <li>
                     <a href="manage-lecture">
                         <span class="icon icon-1"><i class="ri-user-line"></i></span>
-                        <span class="sidebar--item">manage lectures</span>
+                        <span class="sidebar--item">Manage Guru</span>
                     </a>
                 </li>
                 <li>
                     <a href="manage-students">
                         <span class="icon icon-1"><i class="ri-user-line"></i></span>
-                        <span class="sidebar--item">Manage Students</span>
+                        <span class="sidebar--item">Manage Siswa</span>
                     </a>
                 </li>
                 
@@ -36,13 +36,13 @@
                 <li>
                     <a href="#">
                         <span class="icon icon-2"><i class="ri-settings-3-line"></i></span>
-                        <span class="sidebar--item">Settings</span>
+                        <span class="sidebar--item">Pengaturan</span>
                     </a>
                 </li>
                 <li>
                     <a href="logout">
                         <span class="icon icon-2"><i class="ri-logout-box-r-line"></i></span>
-                        <span class="sidebar--item">Logout</span>
+                        <span class="sidebar--item">Keluar</span>
                     </a>
                 </li>
             </ul>

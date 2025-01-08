@@ -1,7 +1,7 @@
 <section class="header">
     <div class="logo">
         <i class="ri-menu-line icon icon-0 menu"></i>
-        <h2>Attendance M<span>s</span></h2>
+        <h2>Absensi<span>Gma</span></h2>
     </div>
     <div class="search--notification--profile">
         <div id="searchInput" class="search">

@@ -4,13 +4,13 @@
     <table>
         <thead>
             <tr>
-                <th>Registration No</th>
-                <th>Name</th>
-                <th>Course</th>
-                <th>Unit</th>
-                <th>Venue</th>
-                <th>Attendance</th>
-                <th>Settings</th>
+                <th>Nomor registrasi</th>
+                <th>Nama</th>
+                <th>Kelas</th>
+                <th>Unit</th> <!-- harus dhapus -->
+                <th>Venue</th>  <!-- harus dhapus -->
+                <th>Kehadiran</th>
+                <th>Pengaturan</th>
             </tr>
         </thead>
         <tbody id="studentTableContainer">

@@ -32,7 +32,7 @@
 
                         <div class="card--data">
                             <div class="card--content">
-                                <h5 class="card--title">Registered Students</h5>
+                                <h5 class="card--title">Daftar Siswa</h5>
                                 <h1><?php total_rows('tblstudents') ?></h1>
                             </div>
                             <i class="ri-user-2-line card--icon--lg"></i>
@@ -55,7 +55,7 @@
 
                         <div class="card--data">
                             <div class="card--content">
-                                <h5 class="card--title">Registered Lectures</h5>
+                                <h5 class="card--title">Daftar Guru</h5>
                                 <h1><?php total_rows('tbllecture') ?></h1>
                             </div>
                             <i class="ri-user-line card--icon--lg"></i>
@@ -68,7 +68,7 @@
             <div class="table-container">
                 <a href="manage-lecture" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Lectures</h2>
+                        <h2 class="section--title">Guru</h2>
                         <button class="add"><i class="ri-add-line"></i>Add lecture</button>
                     </div>
                 </a>
@@ -76,12 +76,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Email Address</th>
-                                <th>Phone No</th>
+                                <th>Nama</th>
+                                <th>Alamat email</th>
+                                <th>Nomer Telepon</th>
                                 <th>Faculty</th>
-                                <th>Date Registered</th>
-                                <th>Settings</th>
+                                <th>Tanggal Terdaftar</th>
+                                <th>Pengaturan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -116,20 +116,20 @@
             <div class="table-container">
                 <a href="manage-students" style="text-decoration:none;">
                     <div class="title">
-                        <h2 class="section--title">Students</h2>
-                        <button class="add"><i class="ri-add-line"></i>Add Student</button>
+                        <h2 class="section--title">Siswa</h2>
+                        <button class="add"><i class="ri-add-line"></i>Tambahkan Siswa</button>
                     </div>
                 </a>
                 <div class="table">
                     <table>
                         <thead>
                             <tr>
-                                <th>Registration No</th>
-                                <th>Name</th>
-                                <th>Faculty</th>
-                                <th>Course</th>
+                                <th>Nomor Registrasi</th>
+                                <th>Nama</th>
+                                <th>Fakultas</th>
+                                <th>Kelas</th>
                                 <th>Email</th>
-                                <th>Settings</th>
+                                <th>Pengaturan</th>
                             </tr>
                         </thead>
                         <tbody>

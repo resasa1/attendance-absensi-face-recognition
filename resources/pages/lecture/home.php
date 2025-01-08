@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php include 'includes/sidebar.php'; ?>
         <div class="main--content">
             <div id="messageDiv" class="messageDiv" style="display:none;"> </div>
-            <p style="font:80px; font-weight:400; color:blue; text-align:center; padding-top:2px;">Please select course, unit, and venue first. Before Launching Facial Recognition</p>
+            <p style="font:80px; font-weight:400; color:blue; text-align:center; padding-top:2px;">Tolong pilih kelas terlebih dahulu, sebelum menjalankan absensi kehadiran</p>
             <form class="lecture-options" id="selectForm">
                 <select required name="course" id="courseSelect" onChange="updateTable()">
                     <option value="" selected>Select Course</option>
@@ -95,9 +95,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </form>
             <div class="attendance-button">
-                <button id="startButton" class="add">Launch Facial Recognition</button>
-                <button id="endButton" class="add" style="display:none">End Attendance Process</button>
-                <button id="endAttendance" class="add">END Attendance Taking</button>
+                <button id="startButton" class="add">Absen Kehadiran</button>
+                <button id="endButton" class="add" style="display:none">Hentikan proses absensi</button>
+                <button id="endAttendance" class="add">Matikan kamera absensi</button>
             </div>
 
             <div class="video-container" style="display:none;">

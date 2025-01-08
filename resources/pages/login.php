@@ -73,7 +73,7 @@ function display_error($error, $is_main = false)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login to access dashboard </title>
+    <title> Sigma Boy </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="resources/assets/css/login_styles.css">
 </head>
@@ -81,7 +81,7 @@ function display_error($error, $is_main = false)
 <body>
 
     <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
+        <h1 class="form-title">Masuk </h1>
         <?php
         display_error('login', true);
         ?>
